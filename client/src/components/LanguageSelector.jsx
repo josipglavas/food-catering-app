@@ -10,7 +10,7 @@ const LanguageSelector = () => {
 
   return (
     <div className="flex gap-1 content-center justify-center">
-      {currentLanguage === "en" ? (
+      {currentLanguage === "en" || currentLanguage === "en-US" ? (
         <button onClick={() => changeLanguage("hr")} className="flex gap-1">
           <ReactCountryFlag
             countryCode="HR"
