@@ -8,11 +8,11 @@ i18n
   .init({
     debug: true,
     interpolation: {
-      escapeValue: false, // React already escapes by default
+      escapeValue: false,
     },
     fallbackLng: "en",
     backend: {
-      loadPath: "/locales/{{lng}}/{{ns}}.json", // Path to load translations
+      loadPath: "/locales/{{lng}}/{{ns}}.json",
     },
   });
 

@@ -1,4 +1,11 @@
 {
+  "Nav_Events": "Events",
+  "Nav_About": "About",
+  "Nav_Portfolio": "Portfolio",
+  "Nav_Contact": "Contact",
+  "Nav_Btn_Contact": "Contact us",
   "Home": "Welcome to OuiChef website",
-  "JoinUs": "Join Our Story"
+  "Home_JoinUs": "Join Our Story",
+  "Home_Btn_JoinUs": "Join us",
+  "Home_ContactUs": "Contact us and let us help you realize your dream event!"
 }

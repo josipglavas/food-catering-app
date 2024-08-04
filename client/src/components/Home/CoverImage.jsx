@@ -14,13 +14,15 @@ const CoverImage = () => {
         />
         <div className="absolute inset-0 bg-white opacity-60"></div>
         <div className="absolute top-2/4 left-20 text-left">
-          <h1 className="text-6xl font-normal text-black">{t("JoinUs")}</h1>
+          <h1 className="text-6xl font-normal text-black">
+            {t("Home_JoinUs")}
+          </h1>
           <p className="text-2xl font-extralight text-black mt-2.5">
-            Contact us and let us help you realize your dream event!
+            {t("Home_ContactUs")}
           </p>
         </div>
         <button className="absolute top-3/4 mt-4 left-20 bg-slate-950 text-white py-3 px-20 text-2xl rounded-lg hover:scale-110">
-          Join us
+          {t("Home_Btn_JoinUs")}
         </button>
       </div>
     </>

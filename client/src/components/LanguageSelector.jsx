@@ -20,7 +20,7 @@ const LanguageSelector = () => {
               lineHeight: "1.5em",
             }}
           />
-          <p>HR</p>
+          <p className="pl-1.5">HR</p>
         </button>
       ) : (
         <button onClick={() => changeLanguage("en")} className="flex gap-1">
@@ -32,7 +32,7 @@ const LanguageSelector = () => {
               lineHeight: "1.5em",
             }}
           />
-          <p>EN</p>
+          <p className="pl-1.5">EN</p>
         </button>
       )}
     </div>
