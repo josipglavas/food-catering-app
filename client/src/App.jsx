@@ -4,6 +4,7 @@ import { useTranslation } from "react-i18next";
 import { useEffect } from "react";
 import Navbar from "./components/Navbar.jsx";
 import { Outlet } from "react-router-dom";
+import { FooterComponent } from "./components/Footer.jsx";
 
 const App = () => {
   const { t, i18n } = useTranslation();
@@ -13,13 +14,10 @@ const App = () => {
   }, []);
 
   return (
-    // <div className="flex p-10">
-    //   {/* <p>{t("ViteReact")}</p> */}
-    //   {/* <Form /> */}
-    // </div>
     <>
       <Navbar />
       <Outlet />
+      <FooterComponent />
     </>
   );
 };

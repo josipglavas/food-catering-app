@@ -11,6 +11,8 @@
   },
   "dependencies": {
     "@react-email/components": "^0.0.22",
+    "flowbite": "^2.4.1",
+    "flowbite-react": "^0.10.1",
     "framer-motion": "^11.3.19",
     "i18next": "^23.12.2",
     "i18next-http-backend": "^2.5.2",
