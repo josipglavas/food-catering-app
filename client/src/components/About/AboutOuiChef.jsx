@@ -1,8 +1,7 @@
 import React from "react";
 import { useTranslation } from "react-i18next";
-import ChefImage from "../../assets/home-screen-chef.jpg";
 
-const AboutOuiChef = () => {
+const AboutOuiChef = ({ ChefImage }) => {
   const { t } = useTranslation();
 
   return (
@@ -14,10 +13,10 @@ const AboutOuiChef = () => {
       />
       <div className="ml-24 w-600 items-right content-right">
         <h1 className="text-7xl font-semibold pb-16">
-          {t("Home_About_Title")}
+          {t("About_About_Title")}
         </h1>
         <p className="mt-2 text-4xl text-justify">
-          {t("Home_About_Paragraph")}
+          {t("About_About_Paragraph")}
         </p>
       </div>
     </div>

@@ -5,6 +5,7 @@ import "./index.css";
 import { createBrowserRouter, RouterProvider } from "react-router-dom";
 import ErrorPage from "./pages/ErrorPage.jsx";
 import Home from "./pages/Home.jsx";
+import About from "./pages/About.jsx";
 import Contact from "./pages/Contact.jsx";
 
 const router = createBrowserRouter([
@@ -19,7 +20,7 @@ const router = createBrowserRouter([
       },
       {
         path: "/about",
-        element: <p>About</p>,
+        element: <About />,
       },
       {
         path: "/events",

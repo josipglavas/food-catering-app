@@ -1,8 +1,7 @@
 import React from "react";
 import { useTranslation } from "react-i18next";
-import CookingImage from "../../assets/home-screen-cooking.png";
 
-const OurStory = () => {
+const OurStory = ({ CookingImage }) => {
   const { t } = useTranslation();
 
   return (
@@ -10,10 +9,10 @@ const OurStory = () => {
       <div className="flex items-center justify-between content-center px-24 ">
         <div className="w-600">
           <h1 className="text-7xl font-semibold pb-16">
-            {t("Home_Story_Title")}
+            {t("About_Story_Title")}
           </h1>
           <p className="mt-2 text-4xl text-justify">
-            {t("Home_Story_Paragraph1")}
+            {t("About_Story_Paragraph1")}
           </p>
         </div>
         <img
@@ -23,7 +22,7 @@ const OurStory = () => {
         />
       </div>
       <h1 className="pt-12 mx-24 text-4xl text-justify">
-        {t("Home_Story_Paragraph2")}
+        {t("About_Story_Paragraph2")}
       </h1>
     </>
   );

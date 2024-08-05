@@ -11,6 +11,13 @@ export default {
         256: "39rem",
         512: "46rem",
         600: "52rem",
+        700: "91vh",
+      },
+      letterSpacing: {
+        large: "0.5em",
+      },
+      fontSize: {
+        "10xl": ["10rem", "186px"],
       },
     },
   },

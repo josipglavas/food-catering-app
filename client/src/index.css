@@ -1,3 +1,59 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+.btn-1::before,
+.btn-1::after,
+.btn-span-1::before,
+.btn-span-1::after {
+  content: "";
+  position: absolute;
+  background: #fff;
+  transition: all 0.2s linear;
+}
+
+.btn-1::before,
+.btn-1::after {
+  width: 0;
+  height: 2px;
+}
+
+.btn-1::before {
+  right: 0;
+  top: 0;
+  transition-delay: 0.2s;
+}
+
+.btn-1::after {
+  left: 0;
+  bottom: 0;
+  transition-delay: 0.2s;
+}
+
+.btn-span-1::before,
+.btn-span-1::after {
+  width: 2px;
+  height: 0;
+}
+
+.btn-span-1::before {
+  left: 0;
+  top: 0;
+}
+
+.btn-span-1::after {
+  right: 0;
+  bottom: 0;
+}
+
+.btn-1:hover::before,
+.btn-1:hover::after {
+  width: 100%;
+  transition-delay: 0s;
+}
+
+.btn-1:hover .btn-span-1::before,
+.btn-1:hover .btn-span-1::after {
+  height: 100%;
+  transition-delay: 0.2s;
+}
