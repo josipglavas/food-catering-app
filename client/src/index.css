@@ -57,3 +57,7 @@
   height: 100%;
   transition-delay: 0.2s;
 }
+
+.no-scrollbar::-webkit-scrollbar {
+  display: none;
+}
