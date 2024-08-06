@@ -1,5 +1,6 @@
 import React from "react";
 import { useTranslation } from "react-i18next";
+import Button from "../Button";
 
 const CoverImage = ({ backgroundImage }) => {
   const { t } = useTranslation();
@@ -20,9 +21,13 @@ const CoverImage = ({ backgroundImage }) => {
             {t("About_ContactUs")}
           </p>
         </div>
-        <button className="absolute top-3/4 mt-4 left-20 bg-slate-950 text-white py-3 px-20 text-2xl rounded-lg hover:scale-110">
+        {/* <button className="absolute top-3/4 mt-4 left-20 bg-slate-950 text-white py-3 px-20 text-2xl rounded-lg hover:scale-110">
           {t("About_Btn_JoinUs")}
-        </button>
+        </button> */}
+        <Button
+          Class={"absolute top-3/4 mt-4 left-20"}
+          Text={t("About_Btn_JoinUs")}
+        />
       </div>
     </>
   );

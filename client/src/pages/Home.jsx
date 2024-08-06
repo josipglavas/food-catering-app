@@ -1,54 +1,12 @@
 import { useTranslation } from "react-i18next";
 import backgroundImage from "../assets/home-screen-background.png";
 import "../index.css";
-import Review from "../components/Home/Review";
-import { useRef } from "react";
-import { FaArrowCircleLeft, FaArrowCircleRight } from "react-icons/fa";
+import ReviewList from "../components/Home/ReviewsList";
 
-const reviews = [
-  {
-    image: "https://picsum.photos/200/300",
-    text: "This is the first review",
-    name: "John Doe",
-  },
-  {
-    image: "https://picsum.photos/200/300",
-    text: "This is the second review",
-    name: "Jane Doe",
-  },
-  {
-    image: "https://picsum.photos/200/300",
-    text: "This is the third review",
-    name: "Sam Smith",
-  },
-  {
-    image: "https://picsum.photos/200/300",
-    text: "This is the fourth review",
-    name: "Alex Johnson",
-  },
-  {
-    image: "https://picsum.photos/200/300",
-    text: "This is the fifth review",
-    name: "Chris Lee",
-  },
-];
+import ImageTextBlock from "../components/ImageTextBlock";
 
 const Home = () => {
   const { t } = useTranslation();
-
-  const scrollRef = useRef(null);
-
-  const scrollLeft = () => {
-    if (scrollRef.current) {
-      scrollRef.current.scrollBy({ left: -550, behavior: "smooth" });
-    }
-  };
-
-  const scrollRight = () => {
-    if (scrollRef.current) {
-      scrollRef.current.scrollBy({ left: 550, behavior: "smooth" });
-    }
-  };
 
   return (
     <>
@@ -76,37 +34,28 @@ const Home = () => {
           </div>
         </div>
       </div>
-      <div className="flex justify-center items-center w-100% h-auto mx-10">
-        <button
-          className="z-10 px-2.5 h-10 bg-gray-700 flex text-white text-xl justify-center items-center text-center rounded-full"
-          onClick={scrollLeft}
-        >
-          <FaArrowCircleLeft />
-        </button>
-        <div className="relative overflow-hidden w-10/12 mx-10">
-          <div
-            className="flex no-scrollbar"
-            ref={scrollRef}
-            style={{
-              scrollSnapType: "x mandatory",
-              scrollBehavior: "smooth",
-              overflowX: "scroll",
-              scrollbarWidth: "none" /* For Firefox */,
-              msOverflowStyle: "none" /* For Internet Explorer and Edge */,
-            }}
-          >
-            {reviews.map((review, index) => (
-              <Review {...review} />
-            ))}
-          </div>
-        </div>
-        <button
-          className="z-10 px-2.5 h-10 bg-gray-700 flex text-white text-xl justify-center items-center text-center rounded-full"
-          onClick={scrollRight}
-        >
-          <FaArrowCircleRight />
-        </button>
-      </div>
+      <ReviewList />
+      <ImageTextBlock
+        title={t("Home_SectionOne_Title")}
+        paragraph={t("Home_SectionOne_Paragraph")}
+        backgroundColor={"bg-neutral-200"}
+        image={backgroundImage}
+        imagePosition={"right"}
+      />
+      <ImageTextBlock
+        title={t("Home_SectionTwo_Title")}
+        paragraph={t("Home_SectionTwo_Paragraph")}
+        backgroundColor={"bg-white"}
+        image={backgroundImage}
+        imagePosition={"left"}
+      />
+      <ImageTextBlock
+        title={t("Home_SectionThree_Title")}
+        paragraph={t("Home_SectionThree_Paragraph")}
+        backgroundColor={"bg-neutral-200"}
+        image={backgroundImage}
+        imagePosition={"right"}
+      />
     </>
   );
 };

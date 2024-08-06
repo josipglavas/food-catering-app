@@ -20,7 +20,7 @@ import LogoFooter from "../assets/logo-footer.png";
 
 export function FooterComponent() {
   return (
-    <Footer container className="pt-6 mt-10 bg-slate-950">
+    <Footer container className="pt-6 bg-slate-950">
       <div className="w-full px-24">
         <div className="grid w-full justify-between sm:flex sm:justify-between md:flex md:grid-cols-1 ">
           <div>
