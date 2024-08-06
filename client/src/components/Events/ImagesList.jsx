@@ -72,7 +72,11 @@ const ImagesList = () => {
       </button>
       <div className="relative overflow-hidden w-10/12 mx-10">
         <div
-          className="flex no-scrollbar overflow-x-scroll w-full h-128"
+          className={
+            events.length > 3
+              ? "flex no-scrollbar overflow-x-scroll w-full h-128"
+              : "flex no-scrollbar overflow-x-scroll w-full h-128 justify-center"
+          }
           ref={scrollRef}
           style={{
             scrollSnapType: "x mandatory",
