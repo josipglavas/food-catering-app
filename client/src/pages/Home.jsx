@@ -19,10 +19,10 @@ const Home = () => {
         />
         <div className="absolute inset-0 flex flex-col justify-center items-center text-center">
           <div>
-            <h1 className="text-10xl font-medium text-white">
+            <h1 className="text-9xl font-medium text-white logo italic">
               {t("Home_Logo")}
             </h1>
-            <p className="text-2xl font-normal text-white uppercase tracking-large">
+            <p className="text-2xl font-normal text-white uppercase tracking-large pt-3">
               {t("Home_Slogan")}
             </p>
           </div>

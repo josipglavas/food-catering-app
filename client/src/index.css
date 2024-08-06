@@ -61,3 +61,7 @@
 .no-scrollbar::-webkit-scrollbar {
   display: none;
 }
+
+.logo {
+  font-family: "Playwrite PE", cursive;
+}
