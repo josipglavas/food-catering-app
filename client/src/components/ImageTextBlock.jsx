@@ -26,8 +26,8 @@ const ImageTextBlock = ({
             className={`${extraImageClass} w-1/2 h-256 object-cover`}
           />
           <div className="ml-24 w-600 items-right content-right">
-            <h1 className="text-7xl font-semibold pb-16">{title}</h1>
-            <p className="mt-2 text-4xl text-justify">{paragraph}</p>
+            <h1 className="text-6xl font-semibold pb-16">{title}</h1>
+            <p className="mt-2 text-3xl text-justify">{paragraph}</p>
             {button && (
               <Button
                 Class={"uppercase mt-10"}
@@ -40,8 +40,8 @@ const ImageTextBlock = ({
       ) : (
         <div className="flex items-center justify-between content-center px-24">
           <div className="w-600 mr-24">
-            <h1 className="text-7xl font-semibold pb-16">{title}</h1>
-            <p className="mt-2 text-4xl text-justify">{paragraph}</p>
+            <h1 className="text-6xl font-semibold pb-16">{title}</h1>
+            <p className="mt-2 text-3xl text-justify">{paragraph}</p>
             {button && (
               <Button
                 Class={"uppercase mt-10"}
@@ -58,7 +58,7 @@ const ImageTextBlock = ({
         </div>
       )}
       {extraParagraph !== "" ? (
-        <h1 className="pt-12 mx-24 text-4xl text-justify">
+        <h1 className="pt-12 mx-24 text-3xl text-justify">
           {t("About_Story_Paragraph2")}
         </h1>
       ) : (
