@@ -1,9 +1,12 @@
 import React from "react";
 import { useTranslation } from "react-i18next";
 import Button from "../Button";
+import { useNavigate } from "react-router-dom";
 
 const CoverImage = ({ backgroundImage }) => {
   const { t } = useTranslation();
+  const navigate = useNavigate();
+
   return (
     <>
       <div className="relative h-108 w-full">
@@ -24,6 +27,7 @@ const CoverImage = ({ backgroundImage }) => {
         <Button
           Class={"absolute top-3/4 mt-4 left-20"}
           Text={t("About_Btn_JoinUs")}
+          onClick={() => navigate("/contact")}
         />
       </div>
     </>

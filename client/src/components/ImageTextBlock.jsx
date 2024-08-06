@@ -10,6 +10,8 @@ const ImageTextBlock = ({
   imagePosition,
   extraImageClass,
   button = true,
+  buttonText,
+  buttonOnClick,
   extraParagraph = "",
 }) => {
   const { t } = useTranslation();
@@ -27,17 +29,25 @@ const ImageTextBlock = ({
             <h1 className="text-7xl font-semibold pb-16">{title}</h1>
             <p className="mt-2 text-4xl text-justify">{paragraph}</p>
             {button && (
-              <Button Class={"uppercase mt-10"} Text={t("Home_Btn_BookNow")} />
+              <Button
+                Class={"uppercase mt-10"}
+                Text={buttonText}
+                onClick={buttonOnClick}
+              />
             )}
           </div>
         </div>
       ) : (
         <div className="flex items-center justify-between content-center px-24">
-          <div className="w-600">
+          <div className="w-600 mr-24">
             <h1 className="text-7xl font-semibold pb-16">{title}</h1>
             <p className="mt-2 text-4xl text-justify">{paragraph}</p>
             {button && (
-              <Button Class={"uppercase mt-10"} Text={t("Home_Btn_BookNow")} />
+              <Button
+                Class={"uppercase mt-10"}
+                Text={buttonText}
+                onClick={buttonOnClick}
+              />
             )}
           </div>
           <img

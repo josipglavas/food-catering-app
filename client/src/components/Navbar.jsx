@@ -2,9 +2,11 @@ import { Link } from "react-router-dom";
 import LanguageSelector from "./LanguageSelector";
 import logoMain from "../assets/logo-main.png";
 import { useTranslation } from "react-i18next";
+import { useNavigate } from "react-router-dom";
 
 const Navbar = () => {
   const { t } = useTranslation();
+  const navigate = useNavigate();
 
   return (
     <nav>
@@ -32,7 +34,10 @@ const Navbar = () => {
           <LanguageSelector />
         </li>
         <li className="ml-auto mr-12">
-          <button className="text-nowrap text-white bg-slate-950 px-4 py-2 rounded-lg hover:scale-110">
+          <button
+            className="text-nowrap text-white bg-slate-950 px-4 py-2 rounded-lg hover:scale-110"
+            onClick={() => navigate("/contact")}
+          >
             {t("Nav_Btn_Contact")}
           </button>
         </li>
