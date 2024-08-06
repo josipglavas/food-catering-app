@@ -206,7 +206,7 @@ const Form = () => {
     placeholder:
       currentLanguage === "en" || currentLanguage === "en-US"
         ? "Event type ..."
-        : "Odaberi vrstu dogadaja",
+        : "Odaberi vrstu događaja",
     validation: {
       required: {
         value: true,
