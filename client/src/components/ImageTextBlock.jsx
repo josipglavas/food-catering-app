@@ -8,6 +8,7 @@ const ImageTextBlock = ({
   backgroundColor,
   image,
   imagePosition,
+  extraImageClass,
   button = true,
   extraParagraph = "",
 }) => {
@@ -20,7 +21,7 @@ const ImageTextBlock = ({
           <img
             src={image}
             alt="Chef"
-            className="w-1/2 h-256 rounded-3xl object-cover"
+            className={`${extraImageClass} w-1/2 h-256 object-cover`}
           />
           <div className="ml-24 w-600 items-right content-right">
             <h1 className="text-7xl font-semibold pb-16">{title}</h1>
@@ -42,7 +43,7 @@ const ImageTextBlock = ({
           <img
             src={image}
             alt="Food"
-            className="w-1/2 h-256 rounded-3xl object-cover"
+            className={`${extraImageClass} w-1/2 h-256 object-cover`}
           />
         </div>
       )}

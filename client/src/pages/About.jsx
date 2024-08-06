@@ -17,6 +17,7 @@ const About = () => {
         backgroundColor={"bg-white"}
         image={ChefImage}
         imagePosition={"left"}
+        extraImageClass={"rounded-3xl"}
         button={false}
       />
       <ImageTextBlock
@@ -25,6 +26,7 @@ const About = () => {
         backgroundColor={"bg-neutral-200"}
         image={CookingImage}
         imagePosition={"right"}
+        extraImageClass={"rounded-3xl"}
         button={false}
         extraParagraph={t("About_Story_Paragraph2")}
       />
