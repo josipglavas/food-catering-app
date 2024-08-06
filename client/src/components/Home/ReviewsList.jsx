@@ -28,6 +28,31 @@ const reviews = [
     text: "This is the fifth review",
     name: "Chris Lee",
   },
+  {
+    image: "https://picsum.photos/200/300",
+    text: "This is the first review",
+    name: "John Doe",
+  },
+  {
+    image: "https://picsum.photos/200/300",
+    text: "This is the second review",
+    name: "Jane Doe",
+  },
+  {
+    image: "https://picsum.photos/200/300",
+    text: "This is the third review",
+    name: "Sam Smith",
+  },
+  {
+    image: "https://picsum.photos/200/300",
+    text: "This is the fourth review",
+    name: "Alex Johnson",
+  },
+  {
+    image: "https://picsum.photos/200/300",
+    text: "This is the fifth review",
+    name: "Chris Lee",
+  },
 ];
 
 const ReviewsList = () => {
@@ -35,13 +60,13 @@ const ReviewsList = () => {
 
   const scrollLeft = () => {
     if (scrollRef.current) {
-      scrollRef.current.scrollBy({ left: -550, behavior: "smooth" });
+      scrollRef.current.scrollBy({ left: -650, behavior: "smooth" });
     }
   };
 
   const scrollRight = () => {
     if (scrollRef.current) {
-      scrollRef.current.scrollBy({ left: 550, behavior: "smooth" });
+      scrollRef.current.scrollBy({ left: 650, behavior: "smooth" });
     }
   };
 
