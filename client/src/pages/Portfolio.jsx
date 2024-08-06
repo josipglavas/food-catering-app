@@ -31,7 +31,7 @@ const events = [
 const Portfolio = () => {
   return (
     <div>
-      <div className="bg-neutral-200 pt-12">
+      <div className="bg-neutral-200 pt-12 pb-8">
         <h1 className="text-5xl font-extralight px-16">Weddings</h1>
         <ImagesList
           imageParentClass={""}
@@ -39,7 +39,7 @@ const Portfolio = () => {
           events={events}
         />
       </div>
-      <div className="bg-white pt-12">
+      <div className="bg-white pt-12 pb-8">
         <h1 className="text-5xl font-extralight px-16">Birthdays</h1>
         <ImagesList
           imageParentClass={""}
@@ -47,7 +47,7 @@ const Portfolio = () => {
           events={events}
         />
       </div>
-      <div className="bg-neutral-200 pt-12">
+      <div className="bg-neutral-200 pt-12 pb-8">
         <h1 className="text-5xl font-extralight px-16">Theme Parties</h1>
         <ImagesList
           imageParentClass={""}
@@ -55,7 +55,7 @@ const Portfolio = () => {
           events={events}
         />
       </div>
-      <div className="bg-white pt-12 mb-4">
+      <div className="bg-white pt-12 pb-8">
         <h1 className="text-5xl font-extralight px-16">Graduation</h1>
         <ImagesList
           imageParentClass={""}
