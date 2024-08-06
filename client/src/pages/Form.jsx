@@ -36,31 +36,46 @@ const Form = () => {
         setError(false);
       }, 5000);
     } else {
-      const res = await fetch(`${import.meta.env.VITE_API}/verify`, {
-        method: "POST",
-        body: JSON.stringify({ captchaValue }),
-        headers: {
-          "content-type": "application/json",
-          "x-api-key": import.meta.env.VITE_API_KEY,
-        },
-      });
-      const data = await res.json();
-      if (data.success) {
-        // make form submission
-        handleSubmit(formData);
-      } else {
-        setErrorText(t("Form_CaptchaValidationError"));
+      try {
+        const res = await fetch(`${import.meta.env.VITE_API}/verify`, {
+          method: "POST",
+          body: JSON.stringify({ captchaValue }),
+          headers: {
+            "content-type": "application/json",
+            "x-api-key": import.meta.env.VITE_API_KEY,
+          },
+        });
+
+        if (!res.ok) {
+          throw new Error(`HTTP error! Status: ${res.status}`);
+        }
+
+        const data = await res.json();
+
+        if (data.success) {
+          // Make form submission
+          handleSubmit(formData);
+        } else {
+          setErrorText(t("Form_CaptchaValidationError"));
+          setError(true);
+          setTimeout(() => {
+            setError(false);
+          }, 5000);
+        }
+      } catch (error) {
+        setErrorText(t("Form_ServerError"));
         setError(true);
         setTimeout(() => {
           setError(false);
         }, 5000);
+      } finally {
+        setButtonClicked(false);
       }
     }
   };
 
   const handleSubmit = async (formData) => {
     console.log(formData);
-
     try {
       const response = await fetch(`${import.meta.env.VITE_API}/api/send`, {
         method: "POST",
@@ -75,7 +90,13 @@ const Form = () => {
         }),
       });
 
-      if (response.ok) {
+      if (!response.ok) {
+        throw new Error(`Server error! Status: ${response.status}`);
+      }
+
+      const data = await response.json();
+
+      if (data.success) {
         methods.reset();
         setSuccess(true);
 
@@ -83,20 +104,20 @@ const Form = () => {
           setSuccess(false);
         }, 5000);
       } else {
-        throw new Error("Server error! Please try again.");
+        throw new Error("Unexpected server response");
       }
     } catch (err) {
-      console.log(err);
       setErrorText(t("Form_ServerError"));
       setError(true);
       setTimeout(() => {
         setError(false);
       }, 5000);
+    } finally {
+      if (recaptcha.current) {
+        recaptcha.current.reset();
+      }
+      setButtonClicked(false);
     }
-    if (recaptcha.current) {
-      recaptcha.current.reset();
-    }
-    setButtonClicked(false);
   };
 
   const name_validation = {
@@ -240,20 +261,20 @@ const Form = () => {
             <Input {...desc_validation} className="md:col-span-2" />
             <ReCAPTCHA ref={recaptcha} sitekey={siteKey} />
           </div>
-          <div className="gap-3 mt-5">
+          <div className="gap-3 mt-5 flex">
             <button
               disabled={buttonClicked}
               onClick={onSubmit}
-              className={`flex items-center gap-1 p-5 mb-4 font-semibold rounded-md ${
+              className={`flex items-center gap-1 p-5 font-semibold rounded-md ${
                 buttonClicked
                   ? "text-gray-500 bg-gray-300 cursor-not-allowed"
                   : "text-white bg-blue-600 hover:bg-blue-800"
               }`}
             >
               {buttonClicked ? (
-                <VscLoading className="mr-0.5 animate-spin" />
+                <VscLoading className="mr-1 mt-0.5 animate-spin" />
               ) : (
-                <GrMail className="mr-0.5" />
+                <GrMail className="mr-1 mt-0.5" />
               )}
               {t("Form_Btn_Submit")}
             </button>
@@ -271,7 +292,7 @@ const Form = () => {
                   className="flex items-center gap-1 font-semibold text-orange-600"
                   {...framer_popup}
                 >
-                  <BsFillXSquareFill /> {errorText}
+                  <BsFillXSquareFill className="mt-0.5" /> {errorText}
                 </motion.p>
               )}
             </AnimatePresence>
