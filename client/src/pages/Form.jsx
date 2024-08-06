@@ -118,7 +118,7 @@ const Form = () => {
     validation: {
       required: {
         value: true,
-        message: "required",
+        message: "Please enter a valid phone",
       },
       maxLength: {
         value: 15,
@@ -153,9 +153,24 @@ const Form = () => {
     },
   };
 
+  const event_validation = {
+    name: "event",
+    label: "event",
+    type: "text",
+    id: "event",
+    placeholder: "Event type ...",
+    validation: {
+      required: {
+        value: true,
+        message: "required",
+      },
+    },
+    options: ["Wedding", "Birthday", "Other"],
+  };
+
   const desc_validation = {
     name: "desc",
-    label: "desc",
+    label: "message",
     type: "desc",
     id: "desc",
     multiline: true,
@@ -173,58 +188,61 @@ const Form = () => {
   };
 
   return (
-    <FormProvider {...methods}>
-      <form
-        onSubmit={(e) => e.preventDefault()}
-        noValidate
-        autoComplete="off"
-        className="container"
-      >
-        <div className="grid gap-5 md:grid-cols-2">
-          <Input {...name_validation} />
-          <Input {...num_validation} />
-          <Input {...email_validation} />
-          <Input {...desc_validation} className="md:col-span-2" />
-          <ReCAPTCHA ref={recaptcha} sitekey={siteKey} />
-        </div>
-        <div className="gap-3 mt-5">
-          <button
-            disabled={buttonClicked}
-            onClick={onSubmit}
-            className={`flex items-center gap-1 p-5 mb-4 font-semibold rounded-md ${
-              buttonClicked
-                ? "text-gray-500 bg-gray-300 cursor-not-allowed"
-                : "text-white bg-blue-600 hover:bg-blue-800"
-            }`}
-          >
-            {buttonClicked ? (
-              <VscLoading className="mr-0.5 animate-spin" />
-            ) : (
-              <GrMail className="mr-0.5" />
-            )}
-            Send E-mail
-          </button>
-          <AnimatePresence mode="wait" initial={false}>
-            {success && (
-              <motion.p
-                className="flex items-center gap-1 font-semibold text-green-500"
-                {...framer_popup}
-              >
-                <BsFillCheckSquareFill /> E-mail has been sent successfully
-              </motion.p>
-            )}
-            {error && (
-              <motion.p
-                className="flex items-center gap-1 font-semibold text-orange-600"
-                {...framer_popup}
-              >
-                <BsFillXSquareFill /> {errorText}
-              </motion.p>
-            )}
-          </AnimatePresence>
-        </div>
-      </form>
-    </FormProvider>
+    <div className="bg-white px-12 py-8 rounded-3xl border-2 border-black">
+      <FormProvider {...methods}>
+        <form
+          onSubmit={(e) => e.preventDefault()}
+          noValidate
+          autoComplete="off"
+          className="container"
+        >
+          <div className="grid gap-5 md:grid-cols-2">
+            <Input {...name_validation} />
+            <Input {...num_validation} />
+            <Input {...email_validation} />
+            <Input {...event_validation} />
+            <Input {...desc_validation} className="md:col-span-2" />
+            <ReCAPTCHA ref={recaptcha} sitekey={siteKey} />
+          </div>
+          <div className="gap-3 mt-5">
+            <button
+              disabled={buttonClicked}
+              onClick={onSubmit}
+              className={`flex items-center gap-1 p-5 mb-4 font-semibold rounded-md ${
+                buttonClicked
+                  ? "text-gray-500 bg-gray-300 cursor-not-allowed"
+                  : "text-white bg-blue-600 hover:bg-blue-800"
+              }`}
+            >
+              {buttonClicked ? (
+                <VscLoading className="mr-0.5 animate-spin" />
+              ) : (
+                <GrMail className="mr-0.5" />
+              )}
+              Submit
+            </button>
+            <AnimatePresence mode="wait" initial={false}>
+              {success && (
+                <motion.p
+                  className="flex items-center gap-1 font-semibold text-green-500"
+                  {...framer_popup}
+                >
+                  <BsFillCheckSquareFill /> E-mail has been sent successfully
+                </motion.p>
+              )}
+              {error && (
+                <motion.p
+                  className="flex items-center gap-1 font-semibold text-orange-600"
+                  {...framer_popup}
+                >
+                  <BsFillXSquareFill /> {errorText}
+                </motion.p>
+              )}
+            </AnimatePresence>
+          </div>
+        </form>
+      </FormProvider>
+    </div>
   );
 };
 

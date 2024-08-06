@@ -10,7 +10,6 @@ const About = () => {
   return (
     <>
       <CoverImage backgroundImage={backgroundImage} />
-      {/* <AboutOuiChef ChefImage={ChefImage} /> */}
       <ImageTextBlock
         title={t("About_About_Title")}
         paragraph={t("About_About_Paragraph")}
@@ -30,7 +29,6 @@ const About = () => {
         button={false}
         extraParagraph={t("About_Story_Paragraph2")}
       />
-      {/* <OurStory CookingImage={CookingImage} /> */}
     </>
   );
 };

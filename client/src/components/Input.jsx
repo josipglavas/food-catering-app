@@ -12,6 +12,7 @@ const Input = ({
   placeholder,
   validation,
   multiline,
+  options,
   className,
 }) => {
   const {
@@ -23,7 +24,7 @@ const Input = ({
   const isInvalid = isFormInvalid(inputErrors);
 
   const input_tailwind =
-    "p-5 font-medium rounded-md w-full border border-slate-300 placeholder:opacity-60";
+    "p-5 font-medium rounded-lg w-full border border-slate-300 placeholder:opacity-60";
 
   return (
     <div className={`flex flex-col w-full gap-2 ${className}`}>
@@ -46,8 +47,20 @@ const Input = ({
           type={type}
           className={`${input_tailwind} min-h-[10rem] max-h-[20rem] resize-y`}
           placeholder={placeholder}
-          {...register(`${name}`, validation)}
+          {...register(name, validation)}
         ></textarea>
+      ) : options ? (
+        <select
+          id={id}
+          className={input_tailwind}
+          {...register(name, validation)}
+        >
+          {options.map((option, index) => (
+            <option key={index} value={option}>
+              {option}
+            </option>
+          ))}
+        </select>
       ) : (
         <input
           id={id}
@@ -60,6 +73,7 @@ const Input = ({
     </div>
   );
 };
+
 const InputError = ({ message }) => {
   return (
     <motion.p
