@@ -215,7 +215,7 @@ const Form = () => {
     },
     options:
       currentLanguage === "en" || currentLanguage === "en-US"
-        ? ["Wedding", "Birthday", "Other"]
+        ? ["Wedding", "Birthday", "Graduation", "Other"]
         : ["Vjenčanje", "Rođendan", "Krštenje", "Karmine", "Ostalo"],
   };
 
