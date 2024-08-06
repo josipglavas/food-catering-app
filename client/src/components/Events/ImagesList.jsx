@@ -1,50 +1,8 @@
 import { useTranslation } from "react-i18next";
 import { useRef } from "react";
 import { FaArrowCircleLeft, FaArrowCircleRight } from "react-icons/fa";
-const events = [
-  {
-    image: "https://picsum.photos/800/800",
-    textEN: "Celebrate with Style: Memorable Birthday Catering",
-    textHR: "Proslavite sa stilom: Catering za rođendane za pamćenje",
-  },
-  {
-    image: "https://picsum.photos/800/800",
-    textEN: "Dream Weddings: Exquisite Catering for Your Special Day",
-    textHR: "Vjenčanja iz snova: izuzetan catering za vaš poseban dan",
-  },
-  {
-    image: "https://picsum.photos/800/800",
-    textEN: "This is the third review",
-    textHR: "",
-  },
-  {
-    image: "https://picsum.photos/800/800",
-    textEN: "This is the fourth review",
-    textHR: "",
-  },
-  {
-    image: "https://picsum.photos/800/800",
-    textEN: "This is the fifth review",
-    textHR: "",
-  },
-  {
-    image: "https://picsum.photos/800/800",
-    textEN: "This is the fifth review",
-    textHR: "",
-  },
-  {
-    image: "https://picsum.photos/800/800",
-    textEN: "This is the fifth review",
-    textHR: "",
-  },
-  {
-    image: "https://picsum.photos/800/800",
-    textEN: "This is the fifth review",
-    textHR: "",
-  },
-];
 
-const ImagesList = () => {
+const ImagesList = ({ imageParentClass, imageClass, events }) => {
   const scrollRef = useRef(null);
 
   const scrollLeft = () => {
@@ -87,17 +45,22 @@ const ImagesList = () => {
           }}
         >
           {events.map((event, index) => (
-            <div key={index} className="w-96 flex-none h-11/12 relative m-8">
+            <div
+              key={index}
+              className={`flex-none relative m-8 ${imageParentClass}`}
+            >
               <img
                 src={event.image}
-                className="w-full h-full object-cover"
+                className={`${imageClass} w-full h-full`}
                 alt={`event ${index}`}
               />
-              <p className="absolute bottom-10 left-0 right-0 bg-black bg-opacity-50 text-white text-2xl px-12 py-4">
-                {currentLanguage === "en" || currentLanguage === "en-US"
-                  ? event.textEN
-                  : event.textHR}
-              </p>
+              {event.textEN != null && (
+                <p className="absolute bottom-10 left-0 right-0 bg-black bg-opacity-50 text-white text-2xl px-12 py-4">
+                  {currentLanguage === "en" || currentLanguage === "en-US"
+                    ? event.textEN
+                    : event.textHR}
+                </p>
+              )}
             </div>
           ))}
         </div>
