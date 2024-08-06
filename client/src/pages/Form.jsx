@@ -5,6 +5,7 @@ import { useState, useRef } from "react";
 import { AnimatePresence, motion } from "framer-motion";
 import { VscLoading } from "react-icons/vsc";
 import Input from "../components/Input";
+import { useTranslation } from "react-i18next";
 import ReCAPTCHA from "react-google-recaptcha";
 
 const Form = () => {
@@ -16,6 +17,9 @@ const Form = () => {
   const [errorText, setErrorText] = useState("Error");
   const [buttonClicked, setButtonClicked] = useState(false);
 
+  const { t, i18n } = useTranslation();
+  const currentLanguage = i18n.language;
+
   const onSubmit = methods.handleSubmit((formData) => {
     setButtonClicked(true);
 
@@ -25,7 +29,7 @@ const Form = () => {
   const verifyReCaptcha = async (formData) => {
     const captchaValue = recaptcha.current.getValue();
     if (!captchaValue) {
-      setErrorText("Please verify the reCAPTCHA!");
+      setErrorText(t("Form_CaptchaError"));
       setButtonClicked(false);
       setError(true);
       setTimeout(() => {
@@ -79,7 +83,7 @@ const Form = () => {
       }
     } catch (err) {
       console.log(err);
-      setErrorText("Server error! Please try again.");
+      setErrorText(t("Form_ServerError"));
       setError(true);
       setTimeout(() => {
         setError(false);
@@ -93,10 +97,14 @@ const Form = () => {
 
   const name_validation = {
     name: "name",
-    label: "name",
+    label:
+      currentLanguage === "en" || currentLanguage === "en-US" ? "name" : "ime",
     type: "text",
     id: "name",
-    placeholder: "Write your name ...",
+    placeholder:
+      currentLanguage === "en" || currentLanguage === "en-US"
+        ? "Write your name ..."
+        : "Unesi svoje ime ...",
     validation: {
       required: {
         value: true,
@@ -111,10 +119,16 @@ const Form = () => {
 
   const num_validation = {
     name: "number",
-    label: "number",
+    label:
+      currentLanguage === "en" || currentLanguage === "en-US"
+        ? "phone number"
+        : "broj mobitela",
     type: "number",
     id: "number",
-    placeholder: "Write your number ...",
+    placeholder:
+      currentLanguage === "en" || currentLanguage === "en-US"
+        ? "Write your number ..."
+        : "Unesi broj mobitela ...",
     validation: {
       required: {
         value: true,
@@ -140,7 +154,10 @@ const Form = () => {
     label: "email",
     type: "email",
     id: "email",
-    placeholder: "Type email ...",
+    placeholder:
+      currentLanguage === "en" || currentLanguage === "en-US"
+        ? "Type email ..."
+        : "Unesi svoj email ...",
     validation: {
       required: {
         value: true,
@@ -155,26 +172,41 @@ const Form = () => {
 
   const event_validation = {
     name: "event",
-    label: "event",
+    label:
+      currentLanguage === "en" || currentLanguage === "en-US"
+        ? "event"
+        : "dogadaj",
     type: "text",
     id: "event",
-    placeholder: "Event type ...",
+    placeholder:
+      currentLanguage === "en" || currentLanguage === "en-US"
+        ? "Event type ..."
+        : "Odaberi vrstu dogadaja",
     validation: {
       required: {
         value: true,
         message: "required",
       },
     },
-    options: ["Wedding", "Birthday", "Other"],
+    options:
+      currentLanguage === "en" || currentLanguage === "en-US"
+        ? ["Wedding", "Birthday", "Other"]
+        : ["Vjencanje", "Rodendan", "Ostalo"],
   };
 
   const desc_validation = {
     name: "desc",
-    label: "message",
+    label:
+      currentLanguage === "en" || currentLanguage === "en-US"
+        ? "message"
+        : "poruka",
     type: "desc",
     id: "desc",
     multiline: true,
-    placeholder: "Type message ...",
+    placeholder:
+      currentLanguage === "en" || currentLanguage === "en-US"
+        ? "Type message ..."
+        : "Napisi poruku ...",
     validation: {
       required: {
         value: true,
@@ -219,7 +251,7 @@ const Form = () => {
               ) : (
                 <GrMail className="mr-0.5" />
               )}
-              Submit
+              {t("Form_Btn_Submit")}
             </button>
             <AnimatePresence mode="wait" initial={false}>
               {success && (
@@ -227,7 +259,7 @@ const Form = () => {
                   className="flex items-center gap-1 font-semibold text-green-500"
                   {...framer_popup}
                 >
-                  <BsFillCheckSquareFill /> E-mail has been sent successfully
+                  <BsFillCheckSquareFill /> {t("Form_Success")}
                 </motion.p>
               )}
               {error && (
