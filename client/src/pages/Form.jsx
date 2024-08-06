@@ -216,7 +216,7 @@ const Form = () => {
     options:
       currentLanguage === "en" || currentLanguage === "en-US"
         ? ["Wedding", "Birthday", "Other"]
-        : ["Vjencanje", "Rodendan", "Ostalo"],
+        : ["Vjenčanje", "Rođendan", "Krštenje", "Karmine", "Ostalo"],
   };
 
   const desc_validation = {
