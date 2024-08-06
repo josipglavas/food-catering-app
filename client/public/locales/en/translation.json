@@ -39,5 +39,8 @@
   "Form_Success": "E-mail has been sent successfully",
   "Form_Btn_Submit": "Submit",
   "Error_Btn_Return": "Return to home",
-  "Error_Paragraph": "404, Page not found."
+  "Error_Paragraph": "404, Page not found.",
+  "Footer_About": "About",
+  "Footer_FollowUs": "Follow us",
+  "Footer_Legal": "Legal"
 }
