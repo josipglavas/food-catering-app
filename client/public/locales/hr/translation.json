@@ -32,6 +32,7 @@
   "About_Story_Paragraph2": "Ono što nas izdvaja je naša predanost savršenstvu. Razumijemo vašu viziju i oživljavamo je s pažnjom posvećenom detaljima, čineći vaš događaj besprijekornim i bez stresa. Imali smo privilegiju poslužiti bezbrojna vjenčanja, korporativna događanja i posebne prigode. Zadovoljstvo naših klijenata i sjajne recenzije odražavaju našu predanost kvaliteti i izvrsnosti. U OuiChefu stvaramo iskustva, a ne samo događaje. Dobrodošli u obitelj OuiChef, gdje je svaki obrok remek-djelo, a svaki događaj slavlje.",
   "Form_ServerError": "Pogreška servera! Molimo pokušajte ponovno.",
   "Form_CaptchaError": "Molimo potvrdite reCAPTCHA!",
+  "Form_CaptchaValidationError": "reCAPTCHA neuspješna!",
   "Form_Success": "E-mail uspješno poslan",
   "Form_Btn_Submit": "Pošalji"
 }

@@ -49,7 +49,11 @@ const Form = () => {
         // make form submission
         handleSubmit(formData);
       } else {
-        alert("reCAPTCHA validation failed!");
+        setErrorText(t("Form_CaptchaValidationError"));
+        setError(true);
+        setTimeout(() => {
+          setError(false);
+        }, 5000);
       }
     }
   };

@@ -32,6 +32,7 @@
   "About_Story_Paragraph2": "What sets us apart is our dedication to perfection. We understand your vision and bring it to life with meticulous attention to detail, making your event seamless and stress-free. We've had the privilege of serving countless weddings, corporate events, and special occasions. Our clients' satisfaction and glowing reviews reflect our commitment to quality and excellence. At OuiChef, we create experiences, not just events. Welcome to the OuiChef family, where every meal is amasterpiece and every event is a celebration.",
   "Form_ServerError": "Server error! Please try again.",
   "Form_CaptchaError": "Please verify the reCAPTCHA!",
+  "Form_CaptchaValidationError": "reCAPTCHA validation failed!",
   "Form_Success": "E-mail has been sent successfully",
   "Form_Btn_Submit": "Submit"
 }
