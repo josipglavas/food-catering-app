@@ -55,7 +55,7 @@ const Portfolio = () => {
           events={events}
         />
       </div>
-      <div className="bg-white pt-12">
+      <div className="bg-white pt-12 mb-4">
         <h1 className="text-5xl font-extralight px-16">Graduation</h1>
         <ImagesList
           imageParentClass={""}
