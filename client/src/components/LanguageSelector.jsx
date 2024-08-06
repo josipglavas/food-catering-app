@@ -1,11 +1,32 @@
 import { useTranslation } from "react-i18next";
 import ReactCountryFlag from "react-country-flag";
+import { useEffect } from "react";
 
 const LanguageSelector = () => {
   const { t, i18n } = useTranslation();
+
+  const getStoredLanguage = () => {
+    const storedLanguage = localStorage.getItem("language");
+    return storedLanguage || "en";
+  };
+
+  useEffect(() => {
+    const storedLanguage = getStoredLanguage();
+
+    const timeoutId = setTimeout(() => {
+      if (i18n.language !== storedLanguage) {
+        i18n.changeLanguage(storedLanguage);
+      }
+    }, 20);
+
+    return () => clearTimeout(timeoutId);
+  }, [i18n]);
+
   const currentLanguage = i18n.language;
+
   const changeLanguage = (lang) => {
     i18n.changeLanguage(lang);
+    localStorage.setItem("language", lang);
   };
 
   return (

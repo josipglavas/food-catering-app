@@ -18,7 +18,7 @@ const ErrorPage = () => {
         <Button
           Class={"uppercase mt-10"}
           Text={t("Error_Btn_Return")}
-          onClick={() => navigate("/contact")}
+          onClick={() => navigate("/")}
         />
         {/* <p>
           <i>{error.statusText || error.message}</i>

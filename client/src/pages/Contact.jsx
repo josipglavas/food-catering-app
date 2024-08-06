@@ -27,8 +27,14 @@ const Contact = () => {
           {mail}
         </a>
       </h2>
-      <h2 className="text-3xl mt-12">{t("Contact_Form")}</h2>
-      <div className="py-16 w-10/12">
+      <h2 className="text-3xl mt-12">
+        {t("Contact_Form_Pt1")}
+        <a className="text-blue-500" href="#Form">
+          {t("Contact_Form_Pt2")}
+        </a>
+        {t("Contact_Form_Pt3")}
+      </h2>
+      <div className="my-10 py-6 w-10/12" id="Form">
         <Form />
       </div>
     </div>
