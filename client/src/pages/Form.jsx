@@ -90,13 +90,7 @@ const Form = () => {
         }),
       });
 
-      if (!response.ok) {
-        throw new Error(`Server error! Status: ${response.status}`);
-      }
-
-      const data = await response.json();
-
-      if (data.success) {
+      if (response.ok) {
         methods.reset();
         setSuccess(true);
 
@@ -104,7 +98,7 @@ const Form = () => {
           setSuccess(false);
         }, 5000);
       } else {
-        throw new Error("Unexpected server response");
+        throw new Error(`Server error! Status: ${response.status}`);
       }
     } catch (err) {
       setErrorText(t("Form_ServerError"));
