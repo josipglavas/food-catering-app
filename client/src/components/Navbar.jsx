@@ -74,7 +74,7 @@ const Navbar = () => {
 
       {/* Mobile menu drawer */}
       {isMobileScreen && menuOpen && (
-        <ul className="text-center absolute right-0 top-16 bg-white shadow-lg flex flex-col gap-4 p-6 z-10 w-48">
+        <ul className="text-center absolute right-0 top-16 bg-white shadow-lg flex flex-col gap-4 p-6 z-50 w-48">
           <li>
             <Link to="/" onClick={toggleMenu}>
               {t("Nav_Home")}
