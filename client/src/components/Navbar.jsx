@@ -39,7 +39,7 @@ const Navbar = () => {
           />
         </Link>
         {isMobileScreen ? (
-          <button onClick={toggleMenu} className="text-3xl">
+          <button onClick={toggleMenu} className="text-3xl mr-2">
             {menuOpen ? <FaTimes /> : <FaBars />}
           </button>
         ) : (
