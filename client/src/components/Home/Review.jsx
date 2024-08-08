@@ -6,7 +6,7 @@ const Review = ({ image, text, name }) => {
     <div className="xl:w-256 w-72 xl:h-72 h-32 flex items-center justify-center xl:m-8 m-4 relative xl:px-10 px-2">
       <div className="relative w-full h-full flex items-center justify-center">
         <div className="xl:w-128 w-48 xl:h-56 h-24 rounded-2xl border-2 border-black relative z-10 flex items-center justify-center">
-          <p className="text-black xl:text-lg text-xs">{text}</p>
+          <p className="text-black xl:text-lg text-xs mx-10">{text}</p>
           <h1 className="absolute bottom-2 right-4 text-black xl:text-xl text-xs">
             {name}
           </h1>

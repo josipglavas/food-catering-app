@@ -17,13 +17,13 @@ const ImageTextBlock = ({
   const { t } = useTranslation();
 
   return (
-    <div className={`${backgroundColor} py-16`}>
+    <div className={`${backgroundColor} xl:py-16 py-0 xl:pb-0 pb-8`}>
       {imagePosition.toLowerCase() === "left" ? (
         <div className="flex xl:flex-row flex-col items-center justify-between content-center px-4 xl:px-24">
           <img
             src={image}
             alt="Chef"
-            className={`${extraImageClass} xl:w-1/2 xl:h-256 object-cover`}
+            className={`${extraImageClass} xl:w-1/2 xl:h-256 xl:pt-0 pt-8 object-cover`}
           />
           <div className="xl:w-600 w-screen xl:ml-24 xl:px-0 p-10 xl:text-left text-center">
             <h1 className="xl:text-6xl text-3xl font-semibold xl:pb-16 pb-4">

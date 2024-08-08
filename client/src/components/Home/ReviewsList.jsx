@@ -63,13 +63,15 @@ const ReviewsList = () => {
 
   const scrollLeft = () => {
     if (scrollRef.current) {
-      scrollRef.current.scrollBy({ left: -650, behavior: "smooth" });
+      const scrollAmount = window.innerWidth < 768 ? -240 : -650; // Adjust the value for mobile screens
+      scrollRef.current.scrollBy({ left: scrollAmount, behavior: "smooth" });
     }
   };
 
   const scrollRight = () => {
     if (scrollRef.current) {
-      scrollRef.current.scrollBy({ left: 650, behavior: "smooth" });
+      const scrollAmount = window.innerWidth < 768 ? 240 : 650; // Adjust the value for mobile screens
+      scrollRef.current.scrollBy({ left: scrollAmount, behavior: "smooth" });
     }
   };
 
