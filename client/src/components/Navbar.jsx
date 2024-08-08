@@ -1,60 +1,3 @@
-// import { Link } from "react-router-dom";
-// import LanguageSelector from "./LanguageSelector";
-// import logoMain from "../assets/logo-main.png";
-// import { useTranslation } from "react-i18next";
-// import { useNavigate } from "react-router-dom";
-// import { useMediaQuery } from "@mui/material";
-
-// const Navbar = () => {
-//   const { t } = useTranslation();
-//   const navigate = useNavigate();
-//   const isMobileScreen = useMediaQuery("(max-width:999px)");
-
-//   return (
-//     <nav>
-//       <ul
-//         className={
-//           isMobileScreen
-//             ? "flex gap-8 items-center bg-white"
-//             : "flex gap-8 items-center bg-white"
-//         }
-//       >
-//         <Link to="/">
-//           <img
-//             src={logoMain}
-//             alt="Logo"
-//             className="h-20 object-contain ml-16 mr-4 m-1.5"
-//           />
-//         </Link>
-//         <li>
-//           <Link to="/events">{t("Nav_Events")}</Link>
-//         </li>
-//         <li>
-//           <Link to="/about">{t("Nav_About")}</Link>
-//         </li>
-//         <li>
-//           <Link to="/portfolio">{t("Nav_Portfolio")}</Link>
-//         </li>
-//         <li>
-//           <Link to="/contact">{t("Nav_Contact")}</Link>
-//         </li>
-//         <li>
-//           <LanguageSelector />
-//         </li>
-//         <li className="ml-auto mr-12">
-//           <button
-//             className="text-nowrap text-white bg-slate-950 px-4 py-2 rounded-lg hover:scale-110"
-//             onClick={() => navigate("/contact")}
-//           >
-//             {t("Nav_Btn_Contact")}
-//           </button>
-//         </li>
-//       </ul>
-//     </nav>
-//   );
-// };
-
-// export default Navbar;
 import { Link } from "react-router-dom";
 import LanguageSelector from "./LanguageSelector";
 import logoMain from "../assets/logo-main.png";
@@ -100,25 +43,26 @@ const Navbar = () => {
             {menuOpen ? <FaTimes /> : <FaBars />}
           </button>
         ) : (
-          <ul className="flex gap-8 items-center">
-            <li>
-              <Link to="/events">{t("Nav_Events")}</Link>
-            </li>
-            <li>
-              <Link to="/about">{t("Nav_About")}</Link>
-            </li>
-            <li>
-              <Link to="/portfolio">{t("Nav_Portfolio")}</Link>
-            </li>
-            <li>
-              <Link to="/contact">{t("Nav_Contact")}</Link>
-            </li>
-            <li>
+          <ul className="flex items-center flex-grow pl-2">
+            <li className="w-20 mr-2">
               <LanguageSelector />
             </li>
-            <li className="ml-auto mr-12">
+            <li className=" mr-6">
+              <Link to="/events">{t("Nav_Events")}</Link>
+            </li>
+            <li className=" mr-6">
+              <Link to="/about">{t("Nav_About")}</Link>
+            </li>
+            <li className=" mr-6">
+              <Link to="/portfolio">{t("Nav_Portfolio")}</Link>
+            </li>
+            <li className=" mr-6">
+              <Link to="/contact">{t("Nav_Contact")}</Link>
+            </li>
+
+            <li className="ml-auto">
               <button
-                className="text-nowrap text-white bg-slate-950 px-4 py-2 rounded-lg hover:scale-110"
+                className="text-nowrap text-white bg-slate-950 px-4 py-2 rounded-lg hover:scale-110 mr-12"
                 onClick={() => navigate("/contact")}
               >
                 {t("Nav_Btn_Contact")}
@@ -130,7 +74,7 @@ const Navbar = () => {
 
       {/* Mobile menu drawer */}
       {isMobileScreen && menuOpen && (
-        <ul className="absolute right-0 top-16 bg-white shadow-lg flex flex-col gap-4 p-6 z-10">
+        <ul className="text-center absolute right-0 top-16 bg-white shadow-lg flex flex-col gap-4 p-6 z-10 w-48">
           <li>
             <Link to="/events" onClick={toggleMenu}>
               {t("Nav_Events")}
