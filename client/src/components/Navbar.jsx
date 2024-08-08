@@ -116,7 +116,7 @@ const Navbar = () => {
             <li>
               <LanguageSelector />
             </li>
-            <li className="ml-auto">
+            <li className="ml-auto mr-12">
               <button
                 className="text-nowrap text-white bg-slate-950 px-4 py-2 rounded-lg hover:scale-110"
                 onClick={() => navigate("/contact")}
