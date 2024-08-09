@@ -22,7 +22,7 @@ const Home = () => {
             <h1 className="xl:text-9xl text-3xl font-medium text-white logo italic">
               {t("Home_Logo")}
             </h1>
-            <p className="xl:text-2xl  text-lgfont-normal text-white uppercase tracking-large pt-3">
+            <p className="xl:text-2xl text-lg font-normal text-white uppercase tracking-large pt-3">
               {t("Home_Slogan")}
             </p>
           </div>

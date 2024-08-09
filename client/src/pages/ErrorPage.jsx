@@ -12,7 +12,7 @@ const ErrorPage = () => {
   return (
     <div className="h-screen bg-neutral-200">
       <Navbar />
-      <div id="error-page" className="px-20 py-8">
+      <div id="error-page" className="xl:px-20 px-8 py-8">
         <h1 className="text-7xl pb-10">Oops!</h1>
         <p className="text-2xl">{t("Error_Paragraph")}</p>
         <Button

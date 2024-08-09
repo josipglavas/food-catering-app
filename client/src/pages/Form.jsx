@@ -14,7 +14,9 @@ const Form = () => {
   const methods = useForm();
   const [success, setSuccess] = useState(false);
   const [error, setError] = useState(false);
-  const [errorText, setErrorText] = useState("Error");
+  const [errorText, setErrorText] = useState(
+    "Greška Servera! Molimo pokušajte ponovno."
+  );
   const [buttonClicked, setButtonClicked] = useState(false);
 
   const { t, i18n } = useTranslation();
@@ -239,7 +241,7 @@ const Form = () => {
   };
 
   return (
-    <div className="bg-white px-12 py-8 rounded-3xl border-2 border-black">
+    <div className="bg-white xl:px-12 px-6 py-6 xl:py-8 rounded-3xl border-2 border-black">
       <FormProvider {...methods}>
         <form
           onSubmit={(e) => e.preventDefault()}
@@ -247,19 +249,23 @@ const Form = () => {
           autoComplete="off"
           className="container"
         >
-          <div className="grid gap-5 md:grid-cols-2">
+          <div className="grid xl:gap-5 gap-3 md:grid-cols-2">
             <Input {...name_validation} />
             <Input {...num_validation} />
             <Input {...email_validation} />
             <Input {...event_validation} />
             <Input {...desc_validation} className="md:col-span-2" />
-            <ReCAPTCHA ref={recaptcha} sitekey={siteKey} />
+            <ReCAPTCHA
+              ref={recaptcha}
+              sitekey={siteKey}
+              className="scale-90 xl:scale-100 xl:mx-0 -mx-4"
+            />
           </div>
-          <div className="gap-3 mt-5 flex">
+          <div className="xl:gap-3 gap-2 mt-5 flex ">
             <button
               disabled={buttonClicked}
               onClick={onSubmit}
-              className={`flex items-center gap-1 p-5 font-semibold rounded-md ${
+              className={`flex items-center gap-1 xl:p-5 p-3 xl:text-base text-sm font-semibold rounded-md ${
                 buttonClicked
                   ? "text-gray-500 bg-gray-300 cursor-not-allowed"
                   : "text-white bg-blue-600 hover:bg-blue-800"
@@ -275,18 +281,20 @@ const Form = () => {
             <AnimatePresence mode="wait" initial={false}>
               {success && (
                 <motion.p
-                  className="flex items-center gap-1 font-semibold text-green-500"
+                  className="flex xl:text-base text-sm items-center gap-2 font-semibold text-green-500 xl:mr-0 -mr-8"
                   {...framer_popup}
                 >
-                  <BsFillCheckSquareFill /> {t("Form_Success")}
+                  <BsFillCheckSquareFill className="xl:mt-0.5 text-xl xl:text-base" />{" "}
+                  {t("Form_Success")}
                 </motion.p>
               )}
               {error && (
                 <motion.p
-                  className="flex items-center gap-1 font-semibold text-orange-600"
+                  className="flex xl:text-base text-sm items-center gap-2 font-semibold xl:mr-0 -mr-8 text-orange-600"
                   {...framer_popup}
                 >
-                  <BsFillXSquareFill className="mt-0.5" /> {errorText}
+                  <BsFillXSquareFill className="xl:mt-0.5 text-xl xl:text-base" />{" "}
+                  {errorText}
                 </motion.p>
               )}
             </AnimatePresence>

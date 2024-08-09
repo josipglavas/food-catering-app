@@ -24,10 +24,10 @@ const Input = ({
   const isInvalid = isFormInvalid(inputErrors);
 
   const input_tailwind =
-    "p-5 font-medium rounded-lg w-full border border-slate-300 placeholder:opacity-60";
+    "xl:p-5 p-3 font-medium rounded-lg w-full border border-slate-300 placeholder:opacity-60";
 
   return (
-    <div className={`flex flex-col w-full gap-2 ${className}`}>
+    <div className={`flex flex-col w-full xl:gap-2 gap-1 ${className}`}>
       <div className="flex justify-between">
         <label htmlFor={id} className="font-semibold capitalize">
           {label}
@@ -45,7 +45,7 @@ const Input = ({
         <textarea
           id={id}
           type={type}
-          className={`${input_tailwind} min-h-[10rem] max-h-[20rem] resize-y`}
+          className={`${input_tailwind} min-h-[8rem] max-h-[25rem] resize-y`}
           placeholder={placeholder}
           {...register(name, validation)}
         ></textarea>

@@ -57,13 +57,13 @@ const Events = () => {
         {t("Events_Paragraph")}
       </p>
       <Button
-        Class={"xl:mt-10 mt-5 xl:mx-0 mx-10"}
+        Class={"xl:mt-10 mt-5 xl:mx-0 mx-8"}
         Text={t("Events_Btn_ContactUs")}
         onClick={() => navigate("/contact")}
       />
       <ImagesList
         imageClass={"object-cover"}
-        imageParentClass={"xl:w-96 xl:h-11/12 w-52 h-80"}
+        imageParentClass={"xl:w-96 w-52 h-11/12"}
         events={events}
       />
     </div>

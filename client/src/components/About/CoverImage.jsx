@@ -9,23 +9,23 @@ const CoverImage = ({ backgroundImage }) => {
 
   return (
     <>
-      <div className="relative h-108 w-full">
+      <div className="relative xl:h-108 h-72 w-full">
         <img
           src={backgroundImage}
           alt="Background"
-          className="w-full h-full object-cover"
+          className="w-full xl:h-full h-72 h-full object-cover"
         />
         <div className="absolute inset-0 bg-white opacity-60"></div>
-        <div className="absolute top-2/4 left-20 text-left">
-          <h1 className="text-6xl font-normal text-black">
+        <div className="absolute xl:top-2/4 top-1/4 xl:left-20 left-8 text-left">
+          <h1 className="xl:text-6xl text-3xl font-normal text-black">
             {t("About_JoinUs")}
           </h1>
-          <p className="text-2xl font-extralight text-black mt-2.5">
+          <p className="xl:text-2xl text-lg font-extralight text-black mt-2.5">
             {t("About_ContactUs")}
           </p>
         </div>
         <Button
-          Class={"absolute top-3/4 mt-4 left-20"}
+          Class={"absolute xl:top-3/4 top-2/3 mt-4 xl:left-20 left-8"}
           Text={t("About_Btn_JoinUs")}
           onClick={() => navigate("/contact")}
         />
