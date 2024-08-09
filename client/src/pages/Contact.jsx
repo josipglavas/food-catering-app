@@ -12,7 +12,7 @@ const Contact = () => {
 
   return (
     <div className="bg-neutral-200 py-8">
-      <div className="xl:px-20 px-8 pb-8 bg-neutral-200">
+      <div className="xl:px-20 px-8 xl:pb-0 pb-8 bg-neutral-200">
         <h1 className="xl:text-7xl text-2xl xl:mt-8 xl:mb-12 mb-6">
           {t("Contact_Title")}
         </h1>
