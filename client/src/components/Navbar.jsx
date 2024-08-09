@@ -101,7 +101,7 @@ const Navbar = () => {
             </Link>
           </li>
           <li>
-            <LanguageSelector />
+            <LanguageSelector toggleMenu={toggleMenu} />
           </li>
           <li>
             <button

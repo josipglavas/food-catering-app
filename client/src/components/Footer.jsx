@@ -24,41 +24,54 @@ export function FooterComponent() {
 
   return (
     <Footer container className="pt-6 bg-slate-950">
-      <div className="w-full px-24">
+      <div className="w-full xl:px-24 p-2">
         <div className="grid w-full justify-between sm:flex sm:justify-between md:flex md:grid-cols-1 ">
           <div>
-            <img src={LogoFooter} className="w-36 mt-3" alt="Flowbite Logo" />
+            <img
+              src={LogoFooter}
+              className="w-36 mt-3 xl:block hidden"
+              alt="Flowbite Logo"
+            />
           </div>
-          <div className="grid grid-cols-2 gap-8 sm:mt-4 sm:grid-cols-3 sm:gap-6">
+          <div className="grid grid-cols-3 xl:gap-8 gap-4">
             <div>
-              <FooterTitle title={t("Footer_About")} />
+              <FooterTitle
+                className="xl:text-sm text-xs"
+                title={t("Footer_About")}
+              />
               <FooterLinkGroup col>
-                <FooterLink href="#">
+                <FooterLink className="xl:text-sm text-xs" href="#">
                   <p className="text-slate-300">Flowbite</p>
                 </FooterLink>
-                <FooterLink href="#">
+                <FooterLink className="xl:text-sm text-xs" href="#">
                   <p className="text-slate-300">Tailwind CSS</p>
                 </FooterLink>
               </FooterLinkGroup>
             </div>
             <div>
-              <FooterTitle title={t("Footer_FollowUs")} />
+              <FooterTitle
+                className="xl:text-sm text-xs"
+                title={t("Footer_FollowUs")}
+              />
               <FooterLinkGroup col>
-                <FooterLink href="#">
+                <FooterLink className="xl:text-sm text-xs" href="#">
                   <p className="text-slate-300">Github</p>
                 </FooterLink>
-                <FooterLink href="#">
+                <FooterLink className="xl:text-sm text-xs" href="#">
                   <p className="text-slate-300">Discord</p>
                 </FooterLink>
               </FooterLinkGroup>
             </div>
             <div>
-              <FooterTitle title={t("Footer_Legal")} />
+              <FooterTitle
+                className="xl:text-sm text-xs"
+                title={t("Footer_Legal")}
+              />
               <FooterLinkGroup col>
-                <FooterLink href="#">
+                <FooterLink className="xl:text-sm text-xs" href="#">
                   <p className="text-slate-300">Privacy Policy</p>
                 </FooterLink>
-                <FooterLink href="#">
+                <FooterLink className="xl:text-sm text-xs" href="#">
                   <p className="text-slate-300">Terms &amp; Conditions</p>
                 </FooterLink>
               </FooterLinkGroup>

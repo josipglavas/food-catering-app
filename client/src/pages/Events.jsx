@@ -51,17 +51,19 @@ const Events = () => {
   const { t } = useTranslation();
   const navigate = useNavigate();
   return (
-    <div className="px-20 py-8">
-      <h1 className="text-7xl">{t("Events_Title")}</h1>
-      <p className="text-3xl mt-8 w-2/3">{t("Events_Paragraph")}</p>
+    <div className="xl:px-20 px-0 xl:py-8 py-4">
+      <h1 className="xl:text-7xl text-3xl xl:px-0 px-8">{t("Events_Title")}</h1>
+      <p className="xl:text-3xl text-xl xl:px-0 px-8 xl:mt-8 mt-4 xl:w-2/3 w-full">
+        {t("Events_Paragraph")}
+      </p>
       <Button
-        Class={"mt-10"}
+        Class={"xl:mt-10 mt-5 xl:mx-0 mx-10"}
         Text={t("Events_Btn_ContactUs")}
         onClick={() => navigate("/contact")}
       />
       <ImagesList
         imageClass={"object-cover"}
-        imageParentClass={"w-96 h-11/12 "}
+        imageParentClass={"xl:w-96 xl:h-11/12 w-52 h-80"}
         events={events}
       />
     </div>

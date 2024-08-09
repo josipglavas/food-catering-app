@@ -2,8 +2,8 @@ import { useTranslation } from "react-i18next";
 import ReactCountryFlag from "react-country-flag";
 import { useEffect } from "react";
 
-const LanguageSelector = () => {
-  const { t, i18n } = useTranslation();
+const LanguageSelector = ({ toggleMenu }) => {
+  const { i18n } = useTranslation();
 
   const getStoredLanguage = () => {
     const storedLanguage = localStorage.getItem("language");
@@ -32,7 +32,13 @@ const LanguageSelector = () => {
   return (
     <div className="flex gap-1 content-center justify-center">
       {currentLanguage === "en" || currentLanguage === "en-US" ? (
-        <button onClick={() => changeLanguage("hr")} className="flex gap-1">
+        <button
+          onClick={() => {
+            changeLanguage("hr");
+            toggleMenu();
+          }}
+          className="flex gap-1"
+        >
           <ReactCountryFlag
             countryCode="HR"
             svg
@@ -44,7 +50,13 @@ const LanguageSelector = () => {
           <p className="pl-1.5">HR</p>
         </button>
       ) : (
-        <button onClick={() => changeLanguage("en")} className="flex gap-1">
+        <button
+          onClick={() => {
+            changeLanguage("en");
+            toggleMenu();
+          }}
+          className="flex gap-1"
+        >
           <ReactCountryFlag
             countryCode="US"
             svg
