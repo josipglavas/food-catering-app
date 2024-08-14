@@ -70,8 +70,6 @@ const Form = () => {
         setTimeout(() => {
           setError(false);
         }, 5000);
-      } finally {
-        setButtonClicked(false);
       }
     }
   };
@@ -89,6 +87,8 @@ const Form = () => {
           to: formData.email,
           subject: formData.name,
           message: formData.desc,
+          event: formData.event,
+          number: formData.number,
         }),
       });
 
@@ -234,8 +234,8 @@ const Form = () => {
         message: "required",
       },
       minLength: {
-        value: 6,
-        message: "min 6 characters",
+        value: 3,
+        message: "min 3 characters",
       },
     },
   };

@@ -18,10 +18,11 @@ const transporter = createTransport({
 });
 
 app.post("/api/send", verifyAPIKey, (req, res) => {
+  console.log(req.body);
   const mailOptions = {
     from: process.env.EMAIL,
-    to: req.body.to,
-    subject: req.body.subject,
+    to: req.body.to, //change to process.env.EMAIL
+    subject: `${req.body.subject} - događaj: ${req.body.event} - broj telefona: ${req.body.number} - e-mail: ${req.body.to}`,
     html: req.body.message,
   };
   transporter.sendMail(mailOptions, (error, info) => {
