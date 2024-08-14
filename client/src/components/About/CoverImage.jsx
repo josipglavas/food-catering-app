@@ -16,7 +16,7 @@ const CoverImage = ({ backgroundImage }) => {
           className="w-full xl:h-full h-72 h-full object-cover"
         />
         <div className="absolute inset-0 bg-white opacity-60"></div>
-        <div className="absolute xl:top-2/4 top-1/4 xl:left-20 left-8 text-left">
+        <div className="absolute xl:top-2/4 top-1/4 xl:left-20 left-8 text-left pl-4">
           <h1 className="xl:text-6xl text-3xl font-normal text-black">
             {t("About_JoinUs")}
           </h1>
@@ -25,7 +25,7 @@ const CoverImage = ({ backgroundImage }) => {
           </p>
         </div>
         <Button
-          Class={"absolute xl:top-3/4 top-2/3 mt-4 xl:left-20 left-8"}
+          Class={"absolute xl:top-3/4 top-2/3 mt-4 xl:left-20 left-8 ml-4"}
           Text={t("About_Btn_JoinUs")}
           onClick={() => navigate("/contact")}
         />

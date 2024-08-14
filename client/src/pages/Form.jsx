@@ -129,11 +129,17 @@ const Form = () => {
     validation: {
       required: {
         value: true,
-        message: "required",
+        message:
+          currentLanguage === "en" || currentLanguage === "en-US"
+            ? "Required"
+            : "Potrebno",
       },
       maxLength: {
         value: 30,
-        message: "30 characters max",
+        message:
+          currentLanguage === "en" || currentLanguage === "en-US"
+            ? "30 characters max"
+            : "Max 30 slova",
       },
     },
   };
@@ -153,19 +159,31 @@ const Form = () => {
     validation: {
       required: {
         value: true,
-        message: "Please enter a valid phone",
+        message:
+          currentLanguage === "en" || currentLanguage === "en-US"
+            ? "Please enter a valid phone"
+            : "Molimo unesite ispravan broj",
       },
       maxLength: {
         value: 15,
-        message: "15 characters max",
+        message:
+          currentLanguage === "en" || currentLanguage === "en-US"
+            ? "15 characters max"
+            : "Max 15 slova",
       },
       minLength: {
         value: 6,
-        message: "min 6 characters",
+        message:
+          currentLanguage === "en" || currentLanguage === "en-US"
+            ? "6 characters min"
+            : "Min 6 slova",
       },
       pattern: {
         value: /^[0-9]+$/,
-        message: "Please enter a valid phone",
+        message:
+          currentLanguage === "en" || currentLanguage === "en-US"
+            ? "Please enter a valid phone"
+            : "Molimo unesite ispravan broj",
       },
     },
   };
@@ -182,11 +200,17 @@ const Form = () => {
     validation: {
       required: {
         value: true,
-        message: "required",
+        message:
+          currentLanguage === "en" || currentLanguage === "en-US"
+            ? "Required"
+            : "Potrebno",
       },
       pattern: {
         value: /^[^\s@]+@[^\s@]+\.[^\s@]+$/,
-        message: "Please enter a valid email address",
+        message:
+          currentLanguage === "en" || currentLanguage === "en-US"
+            ? "Please enter a valid email address"
+            : "Molimo unesite ispravan e-mail",
       },
     },
   };
@@ -206,7 +230,10 @@ const Form = () => {
     validation: {
       required: {
         value: true,
-        message: "required",
+        message:
+          currentLanguage === "en" || currentLanguage === "en-US"
+            ? "Required"
+            : "Potrebno",
       },
     },
     options:
@@ -231,11 +258,17 @@ const Form = () => {
     validation: {
       required: {
         value: true,
-        message: "required",
+        message:
+          currentLanguage === "en" || currentLanguage === "en-US"
+            ? "Required"
+            : "Potrebno",
       },
       minLength: {
         value: 3,
-        message: "min 3 characters",
+        message:
+          currentLanguage === "en" || currentLanguage === "en-US"
+            ? "min 3 characters"
+            : "min 3 slova",
       },
     },
   };
