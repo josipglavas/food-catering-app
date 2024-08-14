@@ -129,10 +129,7 @@ const Form = () => {
     validation: {
       required: {
         value: true,
-        message:
-          currentLanguage === "en" || currentLanguage === "en-US"
-            ? "Required"
-            : "Potrebno",
+        message: t("Form_Required"),
       },
       maxLength: {
         value: 30,
@@ -200,10 +197,7 @@ const Form = () => {
     validation: {
       required: {
         value: true,
-        message:
-          currentLanguage === "en" || currentLanguage === "en-US"
-            ? "Required"
-            : "Potrebno",
+        message: t("Form_Required"),
       },
       pattern: {
         value: /^[^\s@]+@[^\s@]+\.[^\s@]+$/,
@@ -230,10 +224,7 @@ const Form = () => {
     validation: {
       required: {
         value: true,
-        message:
-          currentLanguage === "en" || currentLanguage === "en-US"
-            ? "Required"
-            : "Potrebno",
+        message: t("Form_Required"),
       },
     },
     options:
@@ -258,10 +249,7 @@ const Form = () => {
     validation: {
       required: {
         value: true,
-        message:
-          currentLanguage === "en" || currentLanguage === "en-US"
-            ? "Required"
-            : "Potrebno",
+        message: t("Form_Required"),
       },
       minLength: {
         value: 3,

@@ -38,6 +38,7 @@
   "Form_CaptchaError": "Molimo potvrdite reCAPTCHA!",
   "Form_CaptchaValidationError": "reCAPTCHA neuspješna!",
   "Form_Success": "E-mail uspješno poslan",
+  "Form_Required": "Obavezno",
   "Form_Btn_Submit": "Pošalji",
   "Error_Btn_Return": "Vrati se na početak",
   "Error_Paragraph": "404, Stranica nije pronađena.",

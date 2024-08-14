@@ -39,6 +39,7 @@
   "Form_CaptchaValidationError": "reCAPTCHA validation failed!",
   "Form_Success": "E-mail has been sent successfully",
   "Form_Btn_Submit": "Submit",
+  "Form_Required": "Required",
   "Error_Btn_Return": "Return to home",
   "Error_Paragraph": "404, Page not found.",
   "Footer_About": "About",
