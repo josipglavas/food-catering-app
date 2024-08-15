@@ -3,6 +3,7 @@ import { isFormInvalid } from "../utils/isFormInvalid.js";
 import { findInputError } from "../utils/findInputError.js";
 import { AnimatePresence, motion } from "framer-motion";
 import { MdError } from "react-icons/md";
+import { useTranslation } from "react-i18next";
 
 const Input = ({
   name,
@@ -19,6 +20,8 @@ const Input = ({
     register,
     formState: { errors },
   } = useFormContext();
+
+  const { t } = useTranslation();
 
   const inputErrors = findInputError(errors, name);
   const isInvalid = isFormInvalid(inputErrors);
