@@ -30,7 +30,9 @@ const CarouselImages = ({ events, title, background }) => {
     <div
       className={`${background} pt-12 pb-8 flex flex-col max-h-256 items-center text-start`}
     >
-      <h1 className="text-5xl font-extralight px-16 w-screen">{title}</h1>
+      <h1 className="text-5xl font-extralight xl:px-16 px-6 w-screen text-nowrap">
+        {title}
+      </h1>
       <div className="xl:m-8 m-6 w-full h-256">
         <Carousel responsive={responsive}>
           {events.map((event, index) => (

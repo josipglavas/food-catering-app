@@ -75,7 +75,7 @@ const responsive = {
 
 const ReviewsList = () => {
   return (
-    <div className="h-96 lg:mx-10 mx-2 lg:pt-6 pt-0">
+    <div className=" lg:mx-10 mx-2 pt-0">
       <Carousel responsive={responsive} className="bg-white">
         {reviews.map((review, index) => (
           <div key={index}>
