@@ -57,7 +57,7 @@ const reviews = [
 const responsive = {
   superLargeDesktop: {
     breakpoint: { max: 4000, min: 3000 },
-    items: 5,
+    items: 4,
   },
   desktop: {
     breakpoint: { max: 3000, min: 1024 },
@@ -75,7 +75,7 @@ const responsive = {
 
 const ReviewsList = () => {
   return (
-    <div className="h-96 flex justify-center items-center lg:mx-10 mx-2 lg:pt-6 pt-0">
+    <div className="h-96 lg:mx-10 mx-2 lg:pt-6 pt-0">
       <Carousel responsive={responsive} className="bg-white">
         {reviews.map((review, index) => (
           <div key={index}>
