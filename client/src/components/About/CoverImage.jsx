@@ -13,7 +13,7 @@ const CoverImage = ({ backgroundImage }) => {
         <img
           src={backgroundImage}
           alt="Background"
-          className="w-full xl:h-full h-72 h-full object-cover"
+          className="w-full xl:h-full h-72 object-cover"
         />
         <div className="absolute inset-0 bg-white opacity-60"></div>
         <div className="absolute xl:top-2/4 top-1/4 xl:left-20 left-8 text-left pl-4">
