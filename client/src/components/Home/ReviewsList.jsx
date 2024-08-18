@@ -78,7 +78,7 @@ const ReviewsList = () => {
     <div className="h-96 flex justify-center items-center lg:mx-10 mx-2 lg:pt-6 pt-0">
       <Carousel responsive={responsive} className="bg-white">
         {reviews.map((review, index) => (
-          <div index={index}>
+          <div key={index}>
             <Review {...review} />
           </div>
         ))}
