@@ -2,6 +2,7 @@ import { useRef } from "react";
 import Review from "./Review";
 import { FaArrowCircleLeft, FaArrowCircleRight } from "react-icons/fa";
 import { useMediaQuery } from "@mui/material";
+import { Carousel } from "flowbite-react";
 
 const reviews = [
   {
@@ -101,9 +102,11 @@ const ReviewsList = () => {
             msOverflowStyle: "none" /* For Internet Explorer and Edge */,
           }}
         >
-          {reviews.map((review, index) => (
-            <Review {...review} />
-          ))}
+          <Carousel>
+            {reviews.map((review, index) => (
+              <Review {...review} />
+            ))}
+          </Carousel>
         </div>
       </div>
       <button

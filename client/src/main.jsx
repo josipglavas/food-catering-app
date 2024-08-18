@@ -9,7 +9,7 @@ import About from "./pages/About.jsx";
 import Contact from "./pages/Contact.jsx";
 import Events from "./pages/Events.jsx";
 import Portfolio from "./pages/Portfolio.jsx";
-import CarouselImages from "./components/Events/Carousel.jsx";
+
 const router = createBrowserRouter([
   {
     path: "/",
@@ -30,7 +30,7 @@ const router = createBrowserRouter([
       },
       {
         path: "/portfolio",
-        element: <CarouselImages />,
+        element: <Portfolio />,
       },
       {
         path: "/contact",

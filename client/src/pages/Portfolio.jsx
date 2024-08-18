@@ -1,5 +1,5 @@
 import React from "react";
-import ImagesList from "../components/Events/ImagesList";
+import CarouselImages from "../components/Events/CarouselImages";
 
 const events = [
   {
@@ -30,40 +30,28 @@ const events = [
 
 const Portfolio = () => {
   return (
-    <div>
-      <div className="bg-neutral-200 pt-12 pb-8">
-        <h1 className="text-5xl font-extralight px-16">Weddings</h1>
-        <ImagesList
-          imageParentClass={""}
-          imageClass={"object-cover"}
-          events={events}
-        />
-      </div>
-      <div className="bg-white pt-12 pb-8">
-        <h1 className="text-5xl font-extralight px-16">Birthdays</h1>
-        <ImagesList
-          imageParentClass={""}
-          imageClass={"object-cover"}
-          events={events}
-        />
-      </div>
-      <div className="bg-neutral-200 pt-12 pb-8">
-        <h1 className="text-5xl font-extralight px-16">Theme Parties</h1>
-        <ImagesList
-          imageParentClass={""}
-          imageClass={"object-cover"}
-          events={events}
-        />
-      </div>
-      <div className="bg-white pt-12 pb-8">
-        <h1 className="text-5xl font-extralight px-16">Graduation</h1>
-        <ImagesList
-          imageParentClass={""}
-          imageClass={"object-cover"}
-          events={events}
-        />
-      </div>
-    </div>
+    <>
+      <CarouselImages
+        events={events}
+        title={"Weddings"}
+        background={"bg-neutral-200"}
+      />
+      <CarouselImages
+        events={events}
+        title={"Birthdays"}
+        background={"bg-white"}
+      />
+      <CarouselImages
+        events={events}
+        title={"Theme Parties"}
+        background={"bg-neutral-200"}
+      />
+      <CarouselImages
+        events={events}
+        title={"Graduation"}
+        background={"bg-white"}
+      />
+    </>
   );
 };
 
