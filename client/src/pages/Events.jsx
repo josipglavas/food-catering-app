@@ -2,7 +2,6 @@ import React from "react";
 import { useTranslation } from "react-i18next";
 import Button from "../components/Button";
 import { useNavigate } from "react-router-dom";
-import ImagesList from "../components/Events/ImagesList";
 
 const events = [
   {
@@ -61,11 +60,11 @@ const Events = () => {
         Text={t("Events_Btn_ContactUs")}
         onClick={() => navigate("/contact")}
       />
-      <ImagesList
+      {/* <ImagesList
         imageClass={"object-cover"}
         imageParentClass={"xl:w-96 w-52 h-11/12"}
         events={events}
-      />
+      /> */}
     </div>
   );
 };

@@ -1,8 +1,5 @@
-import { useRef } from "react";
 import Review from "./Review";
-import { FaArrowCircleLeft, FaArrowCircleRight } from "react-icons/fa";
-import { useMediaQuery } from "@mui/material";
-import { Carousel } from "flowbite-react";
+import Carousel from "react-multi-carousel";
 
 const reviews = [
   {
@@ -57,64 +54,35 @@ const reviews = [
   },
 ];
 
+const responsive = {
+  superLargeDesktop: {
+    breakpoint: { max: 4000, min: 3000 },
+    items: 4,
+  },
+  desktop: {
+    breakpoint: { max: 3000, min: 1024 },
+    items: 2,
+  },
+  tablet: {
+    breakpoint: { max: 1024, min: 464 },
+    items: 2,
+  },
+  mobile: {
+    breakpoint: { max: 464, min: 0 },
+    items: 1,
+  },
+};
+
 const ReviewsList = () => {
-  const isMobileScreen = useMediaQuery("(max-width:999px)");
-
-  const scrollRef = useRef(null);
-
-  const scrollLeft = () => {
-    if (scrollRef.current) {
-      const scrollAmount = window.innerWidth < 768 ? -240 : -650; // Adjust the value for mobile screens
-      scrollRef.current.scrollBy({ left: scrollAmount, behavior: "smooth" });
-    }
-  };
-
-  const scrollRight = () => {
-    if (scrollRef.current) {
-      const scrollAmount = window.innerWidth < 768 ? 240 : 650; // Adjust the value for mobile screens
-      scrollRef.current.scrollBy({ left: scrollAmount, behavior: "smooth" });
-    }
-  };
-
   return (
-    <div className="flex justify-center items-center w-100% h-auto lg:mx-10 mx-2 lg:pt-6 pt-0">
-      <button
-        className="z-10 px-2.5 mr-0.5 h-10 bg-gray-700 flex text-white text-xl justify-center items-center text-center rounded-full"
-        onClick={scrollLeft}
-      >
-        <FaArrowCircleLeft />
-      </button>
-      <div
-        className={
-          isMobileScreen
-            ? "relative overflow-hidden w-10/12 mx-2"
-            : "relative overflow-hidden w-10/12 mx-10"
-        }
-      >
-        <div
-          className="flex no-scrollbar"
-          ref={scrollRef}
-          style={{
-            scrollSnapType: "x mandatory",
-            scrollBehavior: "smooth",
-            overflowX: "scroll",
-            scrollbarWidth: "none" /* For Firefox */,
-            msOverflowStyle: "none" /* For Internet Explorer and Edge */,
-          }}
-        >
-          <Carousel>
-            {reviews.map((review, index) => (
-              <Review {...review} />
-            ))}
-          </Carousel>
-        </div>
-      </div>
-      <button
-        className="z-10 px-2.5 mr-0.5 h-10 bg-gray-700 flex text-white text-xl justify-center items-center text-center rounded-full"
-        onClick={scrollRight}
-      >
-        <FaArrowCircleRight />
-      </button>
+    <div className="h-96 flex justify-center items-center lg:mx-10 mx-2 lg:pt-6 pt-0">
+      <Carousel responsive={responsive} className="bg-white">
+        {reviews.map((review, index) => (
+          <div index={index}>
+            <Review {...review} />
+          </div>
+        ))}
+      </Carousel>
     </div>
   );
 };
