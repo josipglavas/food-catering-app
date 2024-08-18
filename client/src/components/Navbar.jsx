@@ -20,22 +20,12 @@ const Navbar = () => {
 
   return (
     <nav className="relative">
-      <div
-        className={
-          isMobileScreen
-            ? "flex items-center justify-between bg-white p-2"
-            : "flex items-center justify-between bg-white p-4"
-        }
-      >
+      <div className="flex items-center justify-between bg-white xl:p-4 p-2">
         <Link to="/">
           <img
             src={logoMain}
             alt="Logo"
-            className={
-              isMobileScreen
-                ? "h-12 object-contain ml-2 mr-4"
-                : "h-20 object-contain ml-16 mr-4"
-            }
+            className="xl:h-20 h-12 object-contain xl:ml-16 ml-2 mr-4"
           />
         </Link>
         {isMobileScreen ? (
