@@ -1,6 +1,5 @@
 import {
   Footer,
-  FooterBrand,
   FooterCopyright,
   FooterDivider,
   FooterIcon,
@@ -8,13 +7,7 @@ import {
   FooterLinkGroup,
   FooterTitle,
 } from "flowbite-react";
-import {
-  BsDribbble,
-  BsFacebook,
-  BsGithub,
-  BsInstagram,
-  BsTwitter,
-} from "react-icons/bs";
+import { BsFacebook, BsInstagram, BsTwitter } from "react-icons/bs";
 
 import LogoFooter from "../assets/logo-footer.png";
 import { useTranslation } from "react-i18next";
@@ -30,7 +23,7 @@ export function FooterComponent() {
             <img
               src={LogoFooter}
               className="w-36 mt-3 xl:block hidden"
-              alt="Flowbite Logo"
+              alt="Logo"
             />
           </div>
           <div className="grid grid-cols-3 xl:gap-8 gap-4">
@@ -85,8 +78,6 @@ export function FooterComponent() {
             <FooterIcon href="#" icon={BsFacebook} />
             <FooterIcon href="#" icon={BsInstagram} />
             <FooterIcon href="#" icon={BsTwitter} />
-            <FooterIcon href="#" icon={BsGithub} />
-            <FooterIcon href="#" icon={BsDribbble} />
           </div>
         </div>
       </div>
